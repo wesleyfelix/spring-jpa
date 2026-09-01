@@ -6,7 +6,7 @@ import com.google.genai.types.GenerateContentResponse;
 
 public class ConsultaGemini {
     public static String obterTraducao(String texto) {
-        Client client = Client.builder().apiKey("a").build();
+        Client client = Client.builder().apiKey(System.getenv("GEMINI_APIKEY")).build();
 
         GenerateContentResponse response =
                 client.models.generateContent(
